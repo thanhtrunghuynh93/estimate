@@ -1,0 +1,10 @@
+buy_commission: 0.0005
+end_backtest: '2022-05-01'
+initial_equity: 1000000000
+max_stocks: 10
+per_cash: 0
+runs: 1
+sell_commission: 0.0015
+start_backtest: '2021-11-19'
+stop_loss: 0.07
+t_plus: 1

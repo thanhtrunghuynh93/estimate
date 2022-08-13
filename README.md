@@ -1,26 +1,26 @@
-# Efficient Integration of Multi-Order Dynamics and Internal Dynamics in Stock Movement Prediction
-
-This codebase contains the python scripts for ESTIMATE, the model for the submitting WSDM 2023 paper. The full code will be released after the full peer review.
-
-## Environment & Installation Steps
-Python 3.6, Pytorch, Pytorch-Geometric and networkx.
-
-
-```python
+# Install environment
+Init environment using conda
+```
+conda create -n estimate python=3.8.13
+conda activate estimate
+```
+Install pytorch
+```
+conda install pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cudatoolkit=11.3 -c pytorch
+```
+Install torch geometric: Please follow [these instructions](https://pytorch-geometric.readthedocs.io/en/latest/notes/installation.html).
+For our environment, we use the command:
+```
+conda install pyg -c pyg
+```
+Install other packages:
+```
 pip install -r requirements.txt
 ```
 
-## Dataset and Preprocessing 
-
-Download the dataset and follow preprocessing steps from [here]. 
-
-
-## Run
-
-Execute the following python command to train ESTIMATE: 
-```python
-python train_nyse.py -m NYSE -l 16 -u 64 -a 1 -e NYSE_rank_lstm_seq-8_unit-32_0.csv.npy 
-python train_tse.py
-python train_nasdaq.py -l 16 -u 64 -a 0.1
+# Train and Test
+Please using the file **help.sh** for training and testing the ESTIMATE.
 ```
-
+bash help.sh
+```
+Follow instructions and it's good to go. If the model is trained, the pretrained folder will exist.  As a result, we can disable the training mode and run the testing mode only.

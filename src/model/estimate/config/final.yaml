@@ -1,0 +1,37 @@
+project:
+  run_name: estimate
+data:
+  symbols: []
+  start_train: "2021-07-15"
+  end_train: "2022-01-10"
+  start_test: "2022-01-10"
+  end_test: "2022-05-01"
+  n_step_ahead: 5
+  target_col: trend_return
+  include_target: False
+  history_window: 20
+  outlier_threshold: 1000
+  indicators:
+    close_sma: {medium_period: 10, slow_period: 20}
+    rsi: {medium_period: 10, slow_period: 20}
+    macd: {medium_period: 10, slow_period: 20}
+    mfi: {medium_period: 10, slow_period: 20}
+    trend_return: {}
+model:
+  path: supervisor.Supervisor
+  confidence_threshold: 0.90
+  earlystop: 16
+  batch_size: 32
+  epochs: 500
+  hidden_dim: 32
+  rnn_units: 16
+  learning_rate: 0.0001
+  cuda: True
+  resume: False
+  save_best: True
+  lr_decay: 0.005
+  eval_iter: 10
+  dropout: 0.4
+  verify_threshold: 0.08
+backtest:
+  config_path: backtest/config/normal.yaml
