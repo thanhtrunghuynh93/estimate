@@ -1,4 +1,8 @@
-# Install environment
+# Efficient Integration of Multi-Order Dynamics and Internal Dynamics in Stock Movement Prediction
+
+[![arXiv](https://img.shields.io/badge/arXiv-2211.07400-b31b1b.svg)](https://arxiv.org/abs/2211.07400)
+
+## Install environment
 Init environment using conda
 ```
 conda create -n estimate python=3.8.13
@@ -18,7 +22,7 @@ Install other packages:
 pip install -r requirements.txt
 ```
 
-# Train and Test
+## Train and Test
 Please using the file **help.sh** for training and testing the ESTIMATE.
 ```
 bash help.sh
